@@ -8,5 +8,10 @@ public class Main {
         rectangle2.description();
         rectangle3.description();
 
+        Stock stock1 = new Stock("ORCL", "Oracle Corporation");
+        stock1.setPreviousClosingPrice(34.5);
+        stock1.setCurrentPrice(34.35);
+        stock1.getChangePercent();
+
     }
 }
