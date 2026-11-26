@@ -48,9 +48,24 @@ public class Main {
 
 //        Stopwatch exercise
         StopWatch stopWatch = new StopWatch();
+        int[] test = new int[100000];
+        System.out.println(test.length);
+        Random random = new Random();
+        for (int i = 0; i < test.length; i++){
+            test[i] = random.nextInt(100001);
+        }
         stopWatch.start();
-
-
+        for (int i = 0; i < test.length; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < test.length; j++) {
+                if (test[minIndex] > test[j]) {
+                    minIndex = j;
+                }
+            }
+            int temp = test[i];
+            test[i] = test[minIndex];
+            test[minIndex] = temp;
+        }
         stopWatch.stop();
         stopWatch.getElapsedTime();
     }

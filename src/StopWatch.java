@@ -15,19 +15,11 @@ public class StopWatch {
         System.out.println(this.startTime);
     }
     public void stop(){
-        Scanner scanner = new Scanner(System.in);
-        while(true){
-            System.out.println("Type (y) to quit");
-            String input = scanner.nextLine();
-            if (input.equals("y")){
-                Date endedTime = new Date();
-                this.endTime = endedTime.getTime();
-                break;
-            }
-        }
+        Date endedTime = new Date();
+        this.endTime = endedTime.getTime();
     }
     public void getElapsedTime(){
         double elapsedTime = this.endTime - this.startTime;
-        System.out.println("Time elapsed since " + this.startTime + " : " + elapsedTime);
+        System.out.println("Time elapsed since " + this.startTime + " : " + elapsedTime + " at " + this.endTime);
     }
 }
